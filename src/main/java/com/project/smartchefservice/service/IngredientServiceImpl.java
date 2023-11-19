@@ -49,4 +49,15 @@ public class IngredientServiceImpl implements IngredientService{
         defaultMessageResponse.setStatus(new Status(TransactionCode.SUCCESS));
         return defaultMessageResponse;
     }
+
+    @Override
+    public DefaultMessageResponse deleteIngredient(Long ingredientId) {
+        ingredientRepository.deleteById(ingredientId);
+
+        DefaultMessageResponse defaultMessageResponse = new DefaultMessageResponse();
+        DefaultMessageBody body = new DefaultMessageBody("Ingredient deleted successfully");
+        defaultMessageResponse.setBody(new BaseBody<>(body));
+        defaultMessageResponse.setStatus(new Status(TransactionCode.SUCCESS));
+        return defaultMessageResponse;
+    }
 }

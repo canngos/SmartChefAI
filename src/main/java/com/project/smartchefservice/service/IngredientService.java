@@ -7,4 +7,5 @@ import com.project.smartchefservice.response.IngredientResponse;
 public interface IngredientService {
     IngredientResponse getAllIngredients();
     DefaultMessageResponse addIngredient(IngredientRequest ingredientRequest);
+    DefaultMessageResponse deleteIngredient(Long ingredientId);
 }

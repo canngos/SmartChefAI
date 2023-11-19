@@ -26,4 +26,9 @@ public class IngredientController {
     public ResponseEntity<DefaultMessageResponse> addIngredient(@Valid @RequestBody IngredientRequest ingredientRequest) {
         return new ResponseEntity<>(ingredientService.addIngredient(ingredientRequest), HttpStatus.OK);
     }
+
+    @DeleteMapping("/{ingredientId}")
+    public ResponseEntity<DefaultMessageResponse> deleteIngredient(@PathVariable("ingredientId") Long ingredientId) {
+        return new ResponseEntity<>(ingredientService.deleteIngredient(ingredientId), HttpStatus.OK);
+    }
 }
